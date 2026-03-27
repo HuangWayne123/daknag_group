@@ -5,6 +5,7 @@ import Industries from './pages/Industries';
 import Capabilities from './pages/Capabilities';
 import News from './pages/News';
 import About from './pages/About';
+import FAQ from './pages/FAQ';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="capabilities" element={<Capabilities />} />
           <Route path="news" element={<News />} />
           <Route path="about" element={<About />} />
+          <Route path="faq" element={<FAQ />} />
         </Route>
       </Routes>
     </BrowserRouter>

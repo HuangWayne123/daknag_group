@@ -17,7 +17,8 @@ export const Navbar = () => {
     { name: '产业布局', path: '/industries' },
     { name: '集团能力', path: '/capabilities' },
     { name: '新闻动态', path: '/news' },
-    { name: '关于我们', path: '/about' }
+    { name: '关于我们', path: '/about' },
+    { name: '常见问题', path: '/faq' }
   ];
 
   return (
@@ -123,6 +124,7 @@ export const Footer = () => {
               <li><Link to="/capabilities" className="hover:text-gold transition-colors">集团能力</Link></li>
               <li><Link to="/news" className="hover:text-gold transition-colors">新闻动态</Link></li>
               <li><Link to="/about" className="hover:text-gold transition-colors">关于我们</Link></li>
+              <li><Link to="/faq" className="hover:text-gold transition-colors">常见问题</Link></li>
             </ul>
           </div>
 
