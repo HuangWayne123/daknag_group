@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0A1128;
+  --color-brand-light: #15244D;
+  --color-brand-lighter: #1E336B;
+  --color-gold: #D4AF37;
+  --color-gold-hover: #B4942A;
+  --color-gold-light: #F3E5AB;
+}
+
+body {
+  background-color: var(--color-brand);
+  color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
