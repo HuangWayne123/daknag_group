@@ -35,8 +35,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gold/5 blur-[120px]" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-brand-lighter/20 blur-[150px]" />
+          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gold/10 blur-[120px]" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-brand-lighter/40 blur-[150px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -50,21 +50,21 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               食品产业链耕耘者
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-ink tracking-tight mb-8 leading-tight">
               食品产业链<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
+              <span className="text-sage-deep">
                 生态布局引领者
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-ink-muted mb-12 max-w-2xl mx-auto leading-relaxed">
               通过食品、供应链与AI技术，构建完整产业链体系，致力于为全球客户提供卓越的产业价值与创新服务。
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/industries" className="w-full sm:w-auto px-8 py-4 rounded-full bg-gold text-brand font-bold hover:bg-gold-hover transition-all flex items-center justify-center gap-2 group">
+              <Link to="/industries" className="w-full sm:w-auto px-8 py-4 rounded-full bg-gold text-white font-bold hover:bg-gold-hover transition-all flex items-center justify-center gap-2 group">
                 了解产业布局
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/about" className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-light text-white border border-white/10 hover:border-gold/50 hover:text-gold transition-all flex items-center justify-center">
+              <Link to="/about" className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-light text-ink border border-line hover:border-gold/50 hover:text-gold transition-all flex items-center justify-center">
                 关于达康
               </Link>
             </div>
@@ -73,9 +73,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 border-y border-white/5 bg-brand-light/20">
+      <section className="py-16 border-y border-line bg-sage">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-line">
             {stats.map((stat, idx) => (
               <motion.div 
                 key={idx}
@@ -88,10 +88,10 @@ export default function Home() {
                 <div className="text-gold mb-4 p-3 rounded-full bg-gold/10">
                   {stat.icon}
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">
+                <div className="text-4xl md:text-5xl font-bold text-ink mb-2 font-mono tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 font-medium">{stat.label}</div>
+                <div className="text-ink-muted font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -102,9 +102,9 @@ export default function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">核心产业布局</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">核心产业布局</h2>
             <div className="w-20 h-1 bg-gold mx-auto rounded-full mb-6" />
-            <p className="text-gray-400 max-w-2xl mx-auto">三大核心板块协同发展，构建从源头到终端的完整食品产业生态圈。</p>
+            <p className="text-ink-muted max-w-2xl mx-auto">三大核心板块协同发展，构建从源头到终端的完整食品产业生态圈。</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -115,17 +115,17 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="bg-brand-light rounded-2xl p-8 border border-white/5 hover:border-gold/30 transition-all group hover:-translate-y-2 flex flex-col h-full"
+                className="bg-brand-light rounded-2xl p-8 border border-line hover:border-gold/30 transition-all group hover:-translate-y-2 flex flex-col h-full shadow-sm"
               >
-                <div className="w-16 h-16 rounded-2xl bg-brand flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 rounded-2xl bg-sage flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {card.icon}
                 </div>
                 <div className="text-sm text-gold font-medium mb-2">{card.position}</div>
-                <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
-                <p className="text-gray-400 leading-relaxed mb-8 flex-grow">
+                <h3 className="text-2xl font-bold text-ink mb-4">{card.title}</h3>
+                <p className="text-ink-muted leading-relaxed mb-8 flex-grow">
                   {card.desc}
                 </p>
-                <Link to="/industries" className="flex items-center gap-2 text-white group-hover:text-gold transition-colors font-medium mt-auto w-fit">
+                <Link to="/industries" className="flex items-center gap-2 text-ink group-hover:text-gold transition-colors font-medium mt-auto w-fit">
                   深入了解 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>

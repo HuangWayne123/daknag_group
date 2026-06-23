@@ -1,0 +1,32 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15384a"/>
+      <stop offset="1" stop-color="#49c9ff"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="24%" cy="20%" r="52%">
+      <stop offset="0" stop-color="#d8fbff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#d8fbff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="78%" cy="30%" r="48%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#glowA)"/>
+  <rect width="100%" height="100%" fill="url(#glowB)"/>
+  <rect width="100%" height="100%" fill="url(#grid)" opacity=".75"/>
+
+  <rect x="260" y="160" width="1080" height="560" rx="42" fill="#ffffff" opacity=".10" stroke="#ffffff" stroke-opacity=".24"/>
+  <g stroke="#ffffff" stroke-opacity=".55" stroke-width="8">
+    <path d="M510 250v240q0 88-72 138h250q-72-50-72-138V250"/>
+    <path d="M775 250v260q0 70-55 118h210q-55-48-55-118V250"/>
+    <path d="M1030 250v220q0 84-68 158h236q-68-74-68-158V250"/>
+  </g>
+  <g fill="#d8fbff" opacity=".72"><ellipse cx="563" cy="575" rx="112" ry="42"/><ellipse cx="825" cy="575" rx="94" ry="38"/><ellipse cx="1080" cy="575" rx="106" ry="42"/></g></svg>
