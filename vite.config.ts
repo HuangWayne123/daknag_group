@@ -46,6 +46,13 @@ export default defineConfig(({mode}) => {
       },
     },
     server: {
+      proxy: {
+        "/ops": {
+          target: env.VITE_OPS_PROXY_TARGET || "http://127.0.0.1:3200",
+          changeOrigin: true,
+          rewrite: (requestPath) => requestPath.replace(/^\/ops/, ""),
+        },
+      },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Building2, Menu, X } from 'lucide-react';
+import { SiteInstrumentation } from './SiteInstrumentation';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,7 +111,7 @@ export const Footer = () => {
               <span className="text-xl font-bold tracking-wider text-ink">达康控股</span>
             </div>
             <p className="text-ink-muted max-w-md leading-relaxed mb-6">
-              食品产业链生态布局引领者。通过食品、供应链与AI技术，构建完整产业链体系。
+              达康控股统筹食品制造、生鲜食材供应链与产业 AI 能力，服务政企团餐、学校配餐、医院后勤和连锁餐饮等高标准场景。
             </p>
             <div className="text-sm text-ink-muted/70">
               © 2026 达康控股集团有限公司. 保留所有权利.
@@ -132,8 +133,28 @@ export const Footer = () => {
             <h4 className="text-ink font-medium mb-6">联系我们</h4>
             <ul className="space-y-4 text-ink-muted">
               <li>北京市朝阳区达康大厦</li>
-              <li>contact@dakang-holdings.com</li>
-              <li>400-888-8888</li>
+              <li>
+                <a
+                  href="mailto:contact@dakang-holdings.com"
+                  className="hover:text-gold transition-colors"
+                  data-analytics-event="contact_click"
+                  data-analytics-channel="email"
+                  data-analytics-label="集团官网邮箱"
+                >
+                  contact@dakang-holdings.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:4008888888"
+                  className="hover:text-gold transition-colors"
+                  data-analytics-event="contact_click"
+                  data-analytics-channel="phone"
+                  data-analytics-label="集团官网热线"
+                >
+                  400-888-8888
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -145,6 +166,7 @@ export const Footer = () => {
 export const Layout = () => {
   return (
     <div className="min-h-screen bg-brand text-ink font-sans selection:bg-gold selection:text-white flex flex-col">
+      <SiteInstrumentation />
       <Navbar />
       <main className="flex-grow pt-20">
         <Outlet />

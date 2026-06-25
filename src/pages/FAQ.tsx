@@ -92,6 +92,9 @@ export default function FAQ() {
                         <button
                           onClick={() => toggleFaq(catIdx, itemIdx)}
                           className="w-full px-6 py-6 text-left flex justify-between items-center focus:outline-none"
+                          data-analytics-event={!isOpen ? 'faq_open' : undefined}
+                          data-analytics-question={faq.q}
+                          data-analytics-label={category.title}
                         >
                           <span className="text-lg font-medium text-ink pr-8">{faq.q}</span>
                           <ChevronDown
@@ -130,9 +133,15 @@ export default function FAQ() {
             <p className="text-ink-muted mb-8 max-w-2xl mx-auto">
               {content.contact.description}
             </p>
-            <button className="px-8 py-4 rounded-full bg-gold text-white font-bold hover:bg-gold-hover transition-all">
+            <a
+              href="mailto:contact@dakang-holdings.com?subject=%E8%BE%BE%E5%BA%B7%E6%8E%A7%E8%82%A1%E4%B8%9A%E5%8A%A1%E5%92%A8%E8%AF%A2"
+              className="inline-flex px-8 py-4 rounded-full bg-gold text-white font-bold hover:bg-gold-hover transition-all"
+              data-analytics-event="contact_click"
+              data-analytics-channel="email"
+              data-analytics-label="FAQ 联系客服团队"
+            >
               {content.contact.buttonText}
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
