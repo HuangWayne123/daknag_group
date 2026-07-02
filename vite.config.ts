@@ -1,27 +1,38 @@
+import fs from 'node:fs';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 import { vitePrerenderPlugin } from 'vite-prerender-plugin';
 
-const prerenderRoutes = [
+function loadNewsPrerenderRoutes() {
+  const newsDataPath = path.resolve(__dirname, 'src/data/news.json');
+
+  try {
+    const raw = fs.readFileSync(newsDataPath, 'utf8');
+    const news = JSON.parse(raw);
+    const items = Array.isArray(news?.items) ? news.items : [];
+
+    return items
+      .map((item) => Number(item?.id))
+      .filter((id) => Number.isInteger(id) && id > 0)
+      .map((id) => `/news/${id}`);
+  } catch (error) {
+    console.warn('[vite] failed to load news prerender routes from src/data/news.json', error);
+    return [];
+  }
+}
+
+const staticPrerenderRoutes = [
   '/',
   '/industries',
   '/capabilities',
   '/news',
-  '/news/1',
-  '/news/2',
-  '/news/3',
-  '/news/4',
-  '/news/5',
-  '/news/6',
-  '/news/7',
-  '/news/8',
-  '/news/9',
-  '/news/10',
   '/about',
   '/faq'
 ];
+
+const prerenderRoutes = [...new Set([...staticPrerenderRoutes, ...loadNewsPrerenderRoutes()])];
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
